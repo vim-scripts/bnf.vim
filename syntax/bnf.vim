@@ -8,8 +8,10 @@ syn region bnfProduction start="^\a" end="::="me=e-3 contained
 syn match bnfOr "|" contained
 syn match bnfSeperator "::=" contained
 syn match bnfComment "#.*$" contained
+syn match bnfQuoted #".*"# contains=bnfNonTerminal,bnfProduction,bnfOr,bnfSeperator,bnfLiteral,bnfTerminalRangeDelim,bnfTerminalRange
+syn match bnfQuoted #'.*'# contains=bnfNonTerminal,bnfProduction,bnfOr,bnfSeperator,bnfLiteral,bnfTerminalRangeDelim,bnfTerminalRange
 "syn match bnfLiteral #"[ \w]*"# contained
-syn match bnfTerminal "^.*$" contains=bnfNonTerminal,bnfProduction,bnfOr,bnfSeperator,bnfComment,bnfLiteral,bnfTerminalRangeDelim,bnfTerminalRange
+syn match bnfTerminal "^.*$" contains=bnfNonTerminal,bnfProduction,bnfOr,bnfSeperator,bnfComment,bnfLiteral,bnfTerminalRangeDelim,bnfTerminalRange,bnfQuoted
 syn region bnfTerminalRange matchgroup=bnfTerminalRangeDelim start=#\[# end=#\]#
 
 hi link bnfNonTerminal 	Type
@@ -20,4 +22,5 @@ hi bnfTerminal 	guifg=cyan
 hi link bnfComment 		Comment
 hi bnfTerminalRangeDelim guifg=yellow gui=bold
 hi link bnfTerminalRange bnfTerminal
+hi link bnfQuoted bnfTerminal
 "hi link bnfLiteral 	 	String
