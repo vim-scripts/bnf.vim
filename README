@@ -1,0 +1,3 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=250
+
+Pretty straight forward.  It highlights a BNF grammar definition.  Not too fancy, but it makes writing a BNF more pleasant.  You can see a screenshot of bnf.vim at http://students.cs.byu.edu/~mtb6/bnf_vim.png .  For more complex BNF grammar definitions, you may want to check out http://vim.sourceforge.net/script.php?script_id=545 which is an EBNF syntax file by Hans Fugal.
